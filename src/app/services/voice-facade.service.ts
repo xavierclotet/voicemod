@@ -45,5 +45,13 @@ export class VoiceFacadeService {
     ).subscribe();
   }
 
+  getVoiceById(id: string): Voice | null {
+    return this.voiceStateService.getVoiceById(id);
+  }
+
+  setFilters(filters: VoiceFilters) {
+    this.voiceStateService.setFilters(filters);
+  }
+
 
 }

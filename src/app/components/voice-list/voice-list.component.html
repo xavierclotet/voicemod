@@ -1,1 +1,13 @@
-<p>voice-list works! {{ voices?.length }}</p>
+<div style="width: 100%; padding: 2rem">
+  <div>
+    <main *ngIf="voices?.length; else noVoices">
+      <div *ngFor="let voice of voices">
+        {{ voice | json }}
+      </div>
+    </main>
+    <ng-template #noVoices>
+      <div class="container">
+        No voices found matching the filters
+      </div>
+    </ng-template>
+  </div>

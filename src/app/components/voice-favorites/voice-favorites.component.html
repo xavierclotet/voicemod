@@ -1,1 +1,9 @@
-<p>voice-favorites works!</p>
+<div *ngIf="favorites?.length; else noVoices">
+  {{ favorites | json }}
+</div>
+<ng-template #noVoices>
+  <div class="no-results">
+    No favorites
+  </div>
+
+</ng-template>

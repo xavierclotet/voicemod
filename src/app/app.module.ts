@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { VoiceListComponent } from './components/voice-list/voice-list.component';
 import { VoiceFavoritesComponent } from './components/voice-favorites/voice-favorites.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { VoiceFavoritesComponent } from './components/voice-favorites/voice-favo
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     ReactiveFormsModule,
     HttpClientModule
   ],

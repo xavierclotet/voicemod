@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { tap } from 'rxjs/operators';
 import { VoiceFilters } from 'src/app/models/voice';
 
 
@@ -24,7 +25,9 @@ export class VoiceFiltersComponent implements OnInit {
    }
 
   ngOnInit(): void {
-
+    this.form.valueChanges.pipe(
+      tap(() => this.changedFilters.emit(this.form.value as VoiceFilters))
+    ).subscribe();
   }
 
   clickedRandomVoice() {

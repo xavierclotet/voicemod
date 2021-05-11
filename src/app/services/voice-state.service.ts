@@ -41,8 +41,8 @@ export class VoiceStateService {
       this.filters$
     ]).pipe(
       map(([voices, filters]) => voices
-        .filter(voice => filters.search ? (voice.name.indexOf(filters.search) !== -1) : true)
-        .filter(voice => filters.tag ? voice.tags.some(tag => filters.tag === tag) : false)
+        .filter(voice => filters.search ? (voice.name.toLowerCase().indexOf(filters.search.toLowerCase()) !== -1) : true)
+        .filter(voice => filters.tag ? voice.tags.some(tag => filters.tag === tag) : true)
       ));
   }
 
