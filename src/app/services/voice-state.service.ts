@@ -30,6 +30,11 @@ export class VoiceStateService {
     return this._favorites$.asObservable();
   }
 
+  private _tags$ = new BehaviorSubject<string[]>([]);
+  get tags$(): Observable<string[]> {
+    return this._tags$.asObservable();
+  }
+
   get filteredData$(): Observable<Voice[]> {
     return combineLatest([
       this.data$,
@@ -45,6 +50,7 @@ export class VoiceStateService {
 
   setData(voices: Voice[]) {
     this._data$.next(voices);
+    this.setTags();
   }
 
   setFilters(filters: VoiceFilters) {
@@ -73,6 +79,12 @@ export class VoiceStateService {
   removeFromFavorites(voice: Voice): void {
     const newFavs = this._favorites$.getValue().filter(voiceId => voiceId !== voice.id);
     this._favorites$.next(newFavs);
+  }
+
+  private setTags() {
+    const tags = this._data$.getValue().map(data => data.tags);
+    const unique = [...new Set(tags.flat())];
+    this._tags$.next(unique.sort());
   }
 
 }

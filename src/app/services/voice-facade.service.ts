@@ -14,6 +14,10 @@ export class VoiceFacadeService {
     return this.voiceStateService.data$;
   }
 
+  get tags$(): Observable<string[]> {
+    return this.voiceStateService.tags$;
+  }
+
   get favorites$(): Observable<string[]> {
     return this.voiceStateService.favorites$;
   }

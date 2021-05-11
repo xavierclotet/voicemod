@@ -1,12 +1,16 @@
-<div class="filter-bar">
+<form [formGroup]="form">
+  <div class="filter-bar">
     <span class="filter-by-label">Filter by:</span>
     <div>
-        input search
+      <input formControlName="search" placeholder="Search voice">
     </div>
     <div>
-        select tag
+      <select formControlName="tag">
+        <option *ngFor="let tag of tags" [value]="tag">{{ tag }}</option>
+      </select>
     </div>
     <div>
-        <button class="button--primary" (click)="clickedRandomVoice()">get random</button>
+      <button class="button--primary" (click)="clickedRandomVoice()">get random</button>
     </div>
-</div>
+  </div>
+</form>

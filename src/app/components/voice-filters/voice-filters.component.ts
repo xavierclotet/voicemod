@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { VoiceFilters } from 'src/app/models/voice';
 
@@ -6,29 +6,31 @@ import { VoiceFilters } from 'src/app/models/voice';
 @Component({
   selector: 'app-voice-filters',
   templateUrl: './voice-filters.component.html',
-  styleUrls: ['./voice-filters.component.scss']
+  styleUrls: ['./voice-filters.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class VoiceFiltersComponent implements OnInit {
+  @Input() tags: string[] | null = [];
   @Output() changedFilters = new EventEmitter<VoiceFilters>();
   @Output() randomVoice = new EventEmitter<void>();
-  filters: FormGroup;
+  form: FormGroup;
   constructor(
     formBuilder: FormBuilder
   ) {
-    this.filters = formBuilder.group({
+    this.form = formBuilder.group({
       search: [''],
       tag: ['']
     });
    }
 
   ngOnInit(): void {
-    
+
   }
 
   clickedRandomVoice() {
     this.randomVoice.emit();
   }
 
-  
+
 
 }

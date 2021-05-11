@@ -2,6 +2,7 @@
 
   <div class="voice-filters">
     <app-voice-filters
+    [tags]="tags$ | async"
                        (changedFilters)="$event"></app-voice-filters>
   </div>
   <div class="voice-list">
@@ -12,6 +13,7 @@
   <div class="voice-favorites">
     <app-voice-favorites></app-voice-favorites>
   </div>
+
 </div>
 
 
