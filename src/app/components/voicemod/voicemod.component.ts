@@ -23,4 +23,12 @@ export class VoicemodComponent implements OnInit {
     this.voiceFacadeService.setFilters(filters);
   }
 
+  setUnfavoriteVoice(voice: Voice) {
+    this.voiceFacadeService.removeFavorite(voice);
+  }
+
+  setFavoriteVoice(voice: Voice) {
+    this.voiceFacadeService.addFavorite(voice);
+  }
+
 }

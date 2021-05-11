@@ -1,6 +1,8 @@
 <form [formGroup]="form">
   <div class="filter-bar">
-    <span class="filter-by-label">Filter by:</span>
+    <span class="filter-by-label">
+      <img src="/assets/filter.svg">
+    </span>
     <div>
       <input formControlName="search" placeholder="Search voice">
     </div>
@@ -12,7 +14,7 @@
       </select>
     </div>
     <div>
-      <button class="button--primary" (click)="clickedRandomVoice()">get random</button>
+      <img src="/assets/button-random.svg" (click)="clickedRandomVoice()">
     </div>
   </div>
 </form>

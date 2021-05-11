@@ -7,7 +7,10 @@
   </div>
   <div class="voice-list">
     <app-voice-list
-                    [voices]="voices$ | async">
+                    [voices]="voices$ | async"
+                    [favorites]="favorites$ | async"
+                    (setFavoriteVoice)="setFavoriteVoice($event)"
+                    (setUnfavoriteVoice)="setUnfavoriteVoice($event)">
     </app-voice-list>
   </div>
   <div class="voice-favorites">
