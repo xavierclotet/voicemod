@@ -1,7 +1,22 @@
-<app-voice-filters
-    (changedFilters)="$event"
-></app-voice-filters>
+<div class="grid-container">
 
-<!-- 
+  <div class="voice-filters">
+    <app-voice-filters
+                       (changedFilters)="$event"></app-voice-filters>
+  </div>
+  <div class="voice-list">
+    <app-voice-list
+                    [voices]="voices$ | async">
+    </app-voice-list>
+  </div>
+  <div class="voice-favorites">
+    <app-voice-favorites></app-voice-favorites>
+  </div>
+</div>
+
+
+
+
+<!--
     List voices all and fav
 -->

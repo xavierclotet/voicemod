@@ -1,0 +1,22 @@
+.grid-container {
+  display: grid;
+  grid-template-areas: 'filters filters'
+  'list favorites';
+
+  div {
+    text-align: center;
+    border: 2px solid black;
+  }
+
+  .voice-filters {
+    grid-area: filters;
+  }
+
+  .voice-list {
+    grid-area: list;
+  }
+
+  .voice-favorites {
+    grid-area: favorites;
+  }
+}
