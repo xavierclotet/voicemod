@@ -12,6 +12,7 @@ import { VoiceFilters } from 'src/app/models/voice';
 })
 export class VoiceFiltersComponent implements OnInit {
   @Input() tags: string[] | null = [];
+  @Input() selected: string | null = null;
   @Output() changedFilters = new EventEmitter<VoiceFilters>();
   @Output() randomVoice = new EventEmitter<void>();
   form: FormGroup;

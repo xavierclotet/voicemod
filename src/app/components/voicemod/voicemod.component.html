@@ -3,25 +3,25 @@
   <div class="voice-filters">
     <app-voice-filters
                        [tags]="tags$ | async"
+                       [selected]="selected$ | async"
+                       (randomVoice)="onSelectRandomVoice()"
                        (changedFilters)="onChangedFilters($event)"></app-voice-filters>
   </div>
   <div class="voice-list">
     <app-voice-list
                     [voices]="voices$ | async"
                     [favorites]="favorites$ | async"
+                    [selected]="selected$ | async"
                     (setFavoriteVoice)="setFavoriteVoice($event)"
-                    (setUnfavoriteVoice)="setUnfavoriteVoice($event)">
+                    (setUnfavoriteVoice)="setUnfavoriteVoice($event)"
+                    (selectedVoice)="selectedVoice($event)"
+                    (sortByName)="sortByName()">
     </app-voice-list>
   </div>
   <div class="voice-favorites">
-    <app-voice-favorites [favorites]="favorites$ | async"></app-voice-favorites>
+    <app-voice-favorites [favorites]="favorites$ | async"
+                         [selected]="selected$ | async"></app-voice-favorites>
   </div>
 
 </div>
 
-
-
-
-<!--
-    List voices all and fav
--->

@@ -1,3 +1,30 @@
 .no-results{
   padding: 1rem;
 }
+
+.container-main {
+ /*  padding: 0 2rem; */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  div {
+    display: flex;
+    align-items: flex-start;
+    min-width: 100px;
+     img {
+      height: 50px;
+    }
+
+  }
+}
+
+.selected {
+  font-weight: bold;
+  background-color: rgb(156 5 5 / 20%);
+  border-radius: 25px;
+}

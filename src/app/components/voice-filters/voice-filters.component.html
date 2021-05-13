@@ -1,20 +1,27 @@
 <form [formGroup]="form">
-  <div class="filter-bar">
-    <span class="filter-by-label">
-      <img src="/assets/filter.svg">
-    </span>
-    <div>
-      <input formControlName="search" placeholder="Search voice">
-    </div>
-    <span class="filter-by-label">Category:</span>
-    <div>
-      <select formControlName="tag">
-        <option value="">ALL</option>
-        <option *ngFor="let tag of tags" [value]="tag">{{ tag | uppercase }}</option>
-      </select>
-    </div>
-    <div>
-      <img src="/assets/button-random.svg" (click)="clickedRandomVoice()">
-    </div>
+<div class="container">
+
+  <div *ngIf="selected" class="voice-selected">
+    {{ selected }} voice selected
   </div>
+
+    <div class="filter-bar">
+      <span class="filter-by-label">
+        <img src="/assets/filter.svg">
+      </span>
+      <div>
+        <input formControlName="search" placeholder="Search voice">
+      </div>
+      <span class="filter-by-label">Category:</span>
+      <div>
+        <select formControlName="tag">
+          <option value="">ALL</option>
+          <option *ngFor="let tag of tags" [value]="tag">{{ tag | uppercase }}</option>
+        </select>
+      </div>
+      <div class="voice-random" (click)="clickedRandomVoice()">
+        <img src="/assets/button-random.svg" (click)="clickedRandomVoice()" title="Select a random voice!">
+      </div>
+      </div>
+      </div>
 </form>

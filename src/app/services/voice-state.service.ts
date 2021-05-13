@@ -35,6 +35,11 @@ export class VoiceStateService {
     return this._tags$.asObservable();
   }
 
+  private _sort$ = new BehaviorSubject<string>('asc');
+  get sort$(): Observable<string> {
+    return this._sort$.asObservable();
+  }
+
   get filteredData$(): Observable<Voice[]> {
     return combineLatest([
       this.data$,
@@ -79,6 +84,34 @@ export class VoiceStateService {
   removeFromFavorites(voice: Voice): void {
     const newFavs = this._favorites$.getValue().filter(voiceId => voiceId !== voice.id);
     this._favorites$.next(newFavs);
+  }
+
+  sortByName() {
+    const nextSort = this._sort$.getValue() === 'desc' ? 'asc' : 'desc';
+    const data = this._data$.getValue().sort(nextSort === 'desc' ? this.compareDesc : this.compareAsc);
+
+    this._data$.next(data);
+    this._sort$.next(nextSort);
+  }
+
+  private compareAsc(voice1: Voice, voice2: Voice) {
+    if (voice1.name < voice2.name) {
+      return -1;
+    }
+    if (voice1.name > voice2.name) {
+      return 1;
+    }
+    return 0;
+  }
+
+  private compareDesc(voice1: Voice, voice2: Voice) {
+    if (voice1.name > voice2.name) {
+      return -1;
+    }
+    if (voice1.name < voice2.name) {
+      return 1;
+    }
+    return 0;
   }
 
   private setTags() {

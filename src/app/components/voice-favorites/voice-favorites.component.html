@@ -1,6 +1,18 @@
-<div *ngIf="favorites?.length; else noVoices">
-  {{ favorites | json }}
-</div>
+<h3>Favorites</h3>
+
+<div *ngIf="favorites?.length; else noVoices" class="container-main">
+
+  <div class="container">
+    <ng-container *ngFor="let id of favorites">
+      <div [ngClass]="{'selected' : id === selected }">
+        <img src="/assets/{{ getVoiceIcon(id) }}">
+        <span>{{ getVoiceName(id) }}</span>
+      </div>
+    </ng-container>
+    </div>
+
+    </div>
+
 <ng-template #noVoices>
   <div class="no-results">
     No favorites

@@ -10,8 +10,12 @@ import { Voice } from 'src/app/models/voice';
 export class VoiceListComponent implements OnInit {
   @Input() voices: Voice[] | null = [];
   @Input() favorites: string[] | null = [];
+  @Input() selected: string | null = null;
+
   @Output() setFavoriteVoice = new EventEmitter<Voice>();
   @Output() setUnfavoriteVoice = new EventEmitter<Voice>();
+  @Output() selectedVoice = new EventEmitter<Voice>();
+  @Output() sortByName = new EventEmitter<void>();
   constructor() { }
 
   ngOnInit(): void {
@@ -22,12 +26,23 @@ export class VoiceListComponent implements OnInit {
     return found;
   }
 
-  unsetFavorite(voice: Voice) {
+  unsetFavorite(event: MouseEvent, voice: Voice) {
     this.setUnfavoriteVoice.emit(voice);
+    event.stopPropagation();
   }
 
-  setFavorite(voice: Voice) {
+  setFavorite(event: MouseEvent, voice: Voice) {
     this.setFavoriteVoice.emit(voice);
+    event.stopPropagation();
+  }
+
+  selectVoice(voice: Voice) {
+    this.selectedVoice.emit(voice);
+
+  }
+
+  orderByName() {
+    this.sortByName.emit();
   }
 
 }

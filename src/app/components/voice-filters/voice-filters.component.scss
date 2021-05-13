@@ -4,10 +4,11 @@
   align-items: center;
   background-color: #1e2023;
   padding: 10px;
-  border: 2px solid black;
-  color: white;
+  /* border: 2px solid black; */
+  color: black;
   span {
     text-transform: uppercase;
+    color: white;
   }
   div {
     min-width: 100px;
@@ -17,3 +18,17 @@
   }
 }
 
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.voice-selected {
+  text-transform: uppercase;
+}
+
+.voice-random {
+  cursor: pointer;
+
+}

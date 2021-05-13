@@ -26,9 +26,14 @@ export class VoiceFacadeService {
     return this.voiceStateService.filters$;
   }
 
+  get selected$(): Observable<string> {
+    return this.voiceStateService.selected$;
+  }
+
   get filteredData$(): Observable<Voice[]> {
     return this.voiceStateService.filteredData$;
   }
+
   constructor(private voiceApiService: VoiceApiService, private voiceStateService: VoiceStateService) { }
 
   addFavorite(voice: Voice): void {
@@ -51,6 +56,14 @@ export class VoiceFacadeService {
 
   setFilters(filters: VoiceFilters) {
     this.voiceStateService.setFilters(filters);
+  }
+
+  selectVoice(voice: Voice): void {
+    this.voiceStateService.setSelected(voice.id);
+  }
+
+  sortByName() {
+    this.voiceStateService.sortByName();
   }
 
 

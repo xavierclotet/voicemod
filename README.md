@@ -38,3 +38,9 @@ What do you have to do:
             ■ Filter by Voice category ( tags )
             ■ Sort by Ascending or Descending using the Voice name
             ■ The random button will select a random voice from the actual voices list (filtered or not).
+
+## How start
+
+`npm install` 
+`npm run start`
+go to `localhost:4201`

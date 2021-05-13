@@ -1,22 +1,40 @@
-<main *ngIf="voices?.length; else noVoices" class="container">
-  <div *ngFor="let voice of voices">
-    <img *ngIf="isFavorite(voice.id); else noFav" src="/assets/voice-favourite.svg" alt="remove from favorites"
-         title="remove from to favorites" (click)="unsetFavorite(voice)">
-    <ng-template #noFav>
-      <img src=" /assets/voice-favourite-off.svg" alt="add to favorites" title="add to favorites"
-           (click)="setFavorite(voice)">
-    </ng-template>
+<main *ngIf="voices?.length; else noVoices">
 
-    <img src="/assets/{{voice.icon}}/"> <span>{{ voice.name}}</span>
+  <table>
+    <thead>
+      <tr>
+        <th>Icon</th>
+        <th (click)="orderByName()">Name
+          <img src="/assets/order.svg" title="sort" class="sort-icon">
+        </th>
+        <th>Category</th>
+        <th>Fav</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let voice of voices" (click)="selectVoice( voice)"
+          [ngClass]="{'selected': selected === voice.id}">
+        <td> <img src="/assets/{{voice.icon}}/"></td>
+        <td> {{ voice.name}}</td>
+        <td> {{ voice.tags }}</td>
+        <td>
+          <img class="fav" *ngIf="isFavorite(voice.id); else noFav" src="/assets/voice-favourite.svg"
+               alt="remove from favorites"
+               title="remove from favorites" (click)="unsetFavorite($event, voice)">
+          <ng-template #noFav>
+            <img class="fav" src=" /assets/voice-favourite-off.svg" alt="add to favorites" title="add to favorites"
+                 (click)="setFavorite($event, voice)">
+            </ng-template>
+          </td>
+          </tr>
 
+      </tbody>
+      </table>
 
-
-
-    </div>
-    </main>
+</main>
 
 <ng-template #noVoices>
   <div class="container-not-found">
     No voices found matching the filters
   </div>
-  </ng-template>
+</ng-template>
