@@ -6,11 +6,12 @@
  /*  padding: 0 2rem; */
 }
 
-.container {
+.filter-container {
+  margin-left: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 
   div {
     display: flex;
@@ -27,4 +28,15 @@
   font-weight: bold;
   background-color: rgb(156 5 5 / 20%);
   border-radius: 25px;
+}
+
+h4 {
+  margin-top: 1rem;
+}
+
+.item-favorite {
+  cursor: pointer;
+  span {
+    margin-top: 15px;
+  }
 }

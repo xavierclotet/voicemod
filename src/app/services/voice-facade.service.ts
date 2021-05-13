@@ -58,8 +58,8 @@ export class VoiceFacadeService {
     this.voiceStateService.setFilters(filters);
   }
 
-  selectVoice(voice: Voice): void {
-    this.voiceStateService.setSelected(voice.id);
+  selectVoice(id: string): void {
+    this.voiceStateService.setSelected(id);
   }
 
   sortByName() {

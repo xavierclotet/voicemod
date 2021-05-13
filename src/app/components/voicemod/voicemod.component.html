@@ -20,7 +20,8 @@
   </div>
   <div class="voice-favorites">
     <app-voice-favorites [favorites]="favorites$ | async"
-                         [selected]="selected$ | async"></app-voice-favorites>
+                         [selected]="selected$ | async"
+                         (selectVoice)="selectVoice($event)"></app-voice-favorites>
   </div>
 
 </div>

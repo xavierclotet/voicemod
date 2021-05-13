@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #1e2023;
+ /*  background-color: #1e2023; */
   padding: 10px;
   /* border: 2px solid black; */
   color: black;
@@ -18,17 +18,27 @@
   }
 }
 
-.container {
+.filter-container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
 }
 
 .voice-selected {
+  width: 200px;
   text-transform: uppercase;
 }
 
 .voice-random {
   cursor: pointer;
 
+}
+
+select {
+  color: #696A6A;
+  background-color: #1E2023;
+}
+
+.filter-by-category {
+  margin: 10px 0;
 }

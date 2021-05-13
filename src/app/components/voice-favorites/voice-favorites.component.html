@@ -1,10 +1,10 @@
-<h3>Favorites</h3>
+<h4>Favorites</h4>
 
 <div *ngIf="favorites?.length; else noVoices" class="container-main">
 
-  <div class="container">
+  <div class="filter-container">
     <ng-container *ngFor="let id of favorites">
-      <div [ngClass]="{'selected' : id === selected }">
+      <div [ngClass]="{'selected' : id === selected }" class="item-favorite" (click)="onSelectVoice(id)">
         <img src="/assets/{{ getVoiceIcon(id) }}">
         <span>{{ getVoiceName(id) }}</span>
       </div>
@@ -15,7 +15,7 @@
 
 <ng-template #noVoices>
   <div class="no-results">
-    No favorites
+    No favorites found.
   </div>
 
 </ng-template>

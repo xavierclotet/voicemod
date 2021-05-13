@@ -39,7 +39,7 @@ What do you have to do:
             ■ Sort by Ascending or Descending using the Voice name
             ■ The random button will select a random voice from the actual voices list (filtered or not).
 
-## How start
+## How to start the app
 
 `npm install` 
 `npm run start`

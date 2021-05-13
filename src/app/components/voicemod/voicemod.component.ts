@@ -34,7 +34,7 @@ export class VoicemodComponent implements OnInit {
   }
 
   selectedVoice(voice: Voice) {
-    this.voiceFacadeService.selectVoice(voice);
+    this.voiceFacadeService.selectVoice(voice.id);
   }
 
   onSelectRandomVoice() {
@@ -43,7 +43,7 @@ export class VoicemodComponent implements OnInit {
       tap((voices) => {
         if (voices.length) {
           const randomVoice = voices[Math.floor(Math.random() * voices.length)];
-          this.voiceFacadeService.selectVoice(randomVoice);
+          this.voiceFacadeService.selectVoice(randomVoice.id);
         }
       })
     ).subscribe();
@@ -53,5 +53,10 @@ export class VoicemodComponent implements OnInit {
   sortByName() {
     this.voiceFacadeService.sortByName();
   }
+
+  selectVoice(id: string) {
+    this.voiceFacadeService.selectVoice(id);
+  }
+
 
 }

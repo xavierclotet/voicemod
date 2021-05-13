@@ -4,8 +4,9 @@
     <thead>
       <tr>
         <th>Icon</th>
-        <th (click)="orderByName()">Name
-          <img src="/assets/order.svg" title="sort" class="sort-icon">
+        <th>
+          <span>Name</span>
+          <img src="/assets/order.svg" title="sort" class="sort-icon" (click)="orderByName()">
         </th>
         <th>Category</th>
         <th>Fav</th>
@@ -14,7 +15,7 @@
     <tbody>
       <tr *ngFor="let voice of voices" (click)="selectVoice( voice)"
           [ngClass]="{'selected': selected === voice.id}">
-        <td> <img src="/assets/{{voice.icon}}/"></td>
+        <td> <img class="icon" src="/assets/{{voice.icon}}/"></td>
         <td> {{ voice.name}}</td>
         <td> {{ voice.tags }}</td>
         <td>
@@ -35,6 +36,6 @@
 
 <ng-template #noVoices>
   <div class="container-not-found">
-    No voices found matching the filters
+    No voices were found matching the filters
   </div>
 </ng-template>

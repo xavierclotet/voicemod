@@ -6,9 +6,11 @@
   grid-template-columns: 1fr 20%;
   gap: 10px 10px;
 
+
   div {
     text-align: center;
-    border: 1px solid black;
+    border: 1px solid #D1D1D2;
+    padding-right: 2px;;
   }
 
   .voice-filters {
@@ -21,7 +23,7 @@
 
   .voice-favorites {
     grid-area: favorites;
-    background-color: darkseagreen;
+    /* background-color: darkseagreen; */
   }
 
 }

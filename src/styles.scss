@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #1B1B1B;
+  background-image: url(https://www.voicemod.net/v4/wp-content/themes/voicemod/inc/assets/img/background.svg);
+  background-repeat: repeat-y;
+  background-size: cover;
+  color: #4EFFF6 !important;
+  font-size: 18px;
+  line-height: 26px;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+input {
+  color: #4EFFF6;
+}
+
+
+
+select:focus {
+  border-color: #4EFFF6;
+}

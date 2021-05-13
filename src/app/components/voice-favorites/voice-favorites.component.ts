@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Voice } from 'src/app/models/voice';
 import { VoiceFacadeService } from 'src/app/services/voice-facade.service';
 
@@ -11,6 +11,7 @@ import { VoiceFacadeService } from 'src/app/services/voice-facade.service';
 export class VoiceFavoritesComponent implements OnInit {
   @Input() favorites: string[] | null = [];
   @Input() selected: string | null = null;
+  @Output() selectVoice = new EventEmitter<string>();;
   constructor(private voiceFacadeService: VoiceFacadeService) { }
 
   ngOnInit(): void {
@@ -30,7 +31,9 @@ export class VoiceFavoritesComponent implements OnInit {
     return voice ? voice.name : '';
   }
 
-
+  onSelectVoice(id: string) {
+    this.selectVoice.emit(id);
+  }
 
 
 
