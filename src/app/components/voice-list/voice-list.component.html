@@ -15,7 +15,7 @@
     <tbody>
       <tr *ngFor="let voice of voices" (click)="selectVoice( voice)"
           [ngClass]="{'selected': selected === voice.id}">
-        <td> <img class="icon" src="assets/{{voice.icon}}/"></td>
+        <td> <img class="icon" src="assets/{{voice.icon}}"></td>
         <td> {{ voice.name}}</td>
         <td> {{ voice.tags }}</td>
         <td>
