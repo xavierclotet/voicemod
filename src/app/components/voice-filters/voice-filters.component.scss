@@ -2,9 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
- /*  background-color: #1e2023; */
   padding: 10px;
-  /* border: 2px solid black; */
   color: black;
   span {
     text-transform: uppercase;
@@ -15,6 +13,12 @@
     margin: 10px;
     text-align: center;
     font-size: 16px;
+  }
+}
+
+.voice-random {
+  img {
+    cursor: pointer;
   }
 }
 
@@ -29,11 +33,6 @@
   text-transform: uppercase;
 }
 
-.voice-random {
-  cursor: pointer;
-
-}
-
 select {
   color: #696A6A;
   background-color: #1E2023;
@@ -41,4 +40,21 @@ select {
 
 .filter-by-category {
   margin: 10px 0;
+}
+
+@media only screen and (max-width:600px) {
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-container {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: start;
+  }
+
+  .voice-selected {
+    width: 100%;
+  }
 }

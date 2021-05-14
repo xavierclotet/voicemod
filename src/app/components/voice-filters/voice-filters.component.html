@@ -2,13 +2,13 @@
   <div class="filter-container">
 
     <div class="voice-selected">
-      <span *ngIf="selected">{{ selected }} voice selected </span>
+      <div *ngIf="selected" class="animate__animated animate__bounce">{{ selected }} voice selected </div>
     </div>
 
     <div class="filter-bar">
-      <span class="filter-by-label">
+    <!--  <span class="filter-by-label">
         <img src="/assets/filter.svg">
-      </span>
+      </span> -->
       <div>
         <input formControlName="search" placeholder="Type to search a voice..." maxlength="20">
       </div>
@@ -18,8 +18,8 @@
           <option *ngFor="let tag of tags" [value]="tag">{{ tag | uppercase }}</option>
         </select>
       </div>
-      <div class="voice-random" (click)="clickedRandomVoice()">
-        <img src="/assets/button-random.svg" (click)="clickedRandomVoice()" title="Select a random voice!">
+      <div (click)="clickedRandomVoice()" class="voice-random">
+        <img [class]="animate" src="/assets/button-random.svg" (click)="clickedRandomVoice()" title="Select a random voice!">
       </div>
     </div>
 

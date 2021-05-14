@@ -4,9 +4,10 @@
 
   <div class="filter-container">
     <ng-container *ngFor="let id of favorites">
-      <div [ngClass]="{'selected' : id === selected }" class="item-favorite" (click)="onSelectVoice(id)">
-        <img src="/assets/{{ getVoiceIcon(id) }}">
-        <span>{{ getVoiceName(id) }}</span>
+      <div [ngClass]="{'selected' : id === selected }" class="item-favorite" (click)="onSelectVoice(id)"
+           title="Select this voice">
+        <img src="/assets/{{ getVoiceIcon(id) }}" class="animate__animated animate__fadeInLeft">
+        <span class="animate__animated animate__lightSpeedInLeft">{{ getVoiceName(id) }}</span>
       </div>
     </ng-container>
     </div>
@@ -15,7 +16,7 @@
 
 <ng-template #noVoices>
   <div class="no-results">
-    No favorites found.
+    No favorites were found.
   </div>
 
 </ng-template>

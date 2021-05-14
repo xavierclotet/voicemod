@@ -14,23 +14,26 @@ img {
 
 }
 
-table tbody tr:hover {
-  box-shadow: inset 0 0 0 99999px rgba(0,0,0,0.2);
-  cursor: pointer;
-}
-
-table tbody tr {
-  img.fav {
-    height: 15px;
+table {
+  display: inline-table;
+  tbody {
+    tr {
+      &:hover {
+        box-shadow: inset 0 0 0 99999px rgba(0,0,0,0.2);
+        cursor: pointer;
+      }
+      img.fav {
+        height: 15px;
+      }
+      img.icon {
+        height: 50px;
+      }
+      &.selected {
+        font-weight: bold;
+        box-shadow: inset 0 0 0 99999px rgba(156, 5, 5, 0.2);
+      }
+    }
   }
-  img.icon {
-    height: 50px;
-  }
-}
-
-tr.selected {
-  font-weight: bold;
-  box-shadow: inset 0 0 0 99999px rgba(156, 5, 5, 0.2);
 }
 
 .sort-icon {

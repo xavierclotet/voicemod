@@ -44,3 +44,20 @@ What do you have to do:
 `npm install` 
 `npm run start`
 go to `localhost:4201`
+
+#Explanation
+
+I've buid this simple app with 3 main components: VoiceFiltersComponent, VoiceListComponent and VoiceFavoritesComponent.
+
+Another smart component as an orchestrating (VoicemodComponent) component that pass the info to these dumb components through Inputs and receives events through Outputs. This way only the orchestrator knows how and what to do with the data, state, etc through the facade service (VoiceFacadeService). This way the is highly scalable and extensible.
+
+I've also create the state of the app (VoiceStateService) that stores the filtered voices, selected voice, favorites, tags, sort mode... which are the source of truth. 
+
+The app its also responsible showing the favorites below the list and this occupying the whole width.
+
+I've used Scss for the styling and added some animations with animate.css lib
+
+It lacks unit testing with jest or testing library, but this is out of this practice.
+
+Hope you like it.
+

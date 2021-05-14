@@ -32,7 +32,9 @@ export class VoiceFavoritesComponent implements OnInit {
   }
 
   onSelectVoice(id: string) {
-    this.selectVoice.emit(id);
+    if (id !== this.selected) {
+      this.selectVoice.emit(id);
+    }
   }
 
 

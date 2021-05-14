@@ -35,7 +35,7 @@ export class VoiceStateService {
     return this._tags$.asObservable();
   }
 
-  private _sort$ = new BehaviorSubject<string>('asc');
+  private _sort$ = new BehaviorSubject<string>('asc'); // 'asc' | 'desc'
   get sort$(): Observable<string> {
     return this._sort$.asObservable();
   }
