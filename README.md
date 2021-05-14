@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm run start` for a dev server. Navigate to `http://localhost:4201/`. The app will automatically reload if you change any of the source files.
 
 ## Front-end Tech Challenge
 
@@ -38,14 +38,6 @@ What do you have to do:
             ■ Filter by Voice category ( tags )
             ■ Sort by Ascending or Descending using the Voice name
             ■ The random button will select a random voice from the actual voices list (filtered or not).
-
-## How to start the app
-
-`npm install`
-
-`npm run start`
-
-and go to `localhost:4201`
 
 ## Explanation
 
