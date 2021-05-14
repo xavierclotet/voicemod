@@ -6,7 +6,7 @@
         <th>Icon</th>
         <th>
           <span>Name</span>
-          <img src="/assets/order.svg" title="sort" class="sort-icon" (click)="orderByName()">
+          <img src="assets/order.svg" title="sort" class="sort-icon" (click)="orderByName()">
         </th>
         <th>Category</th>
         <th>Fav</th>
@@ -15,15 +15,15 @@
     <tbody>
       <tr *ngFor="let voice of voices" (click)="selectVoice( voice)"
           [ngClass]="{'selected': selected === voice.id}">
-        <td> <img class="icon" src="/assets/{{voice.icon}}/"></td>
+        <td> <img class="icon" src="assets/{{voice.icon}}/"></td>
         <td> {{ voice.name}}</td>
         <td> {{ voice.tags }}</td>
         <td>
-          <img class="fav" *ngIf="isFavorite(voice.id); else noFav" src="/assets/voice-favourite.svg"
+          <img class="fav" *ngIf="isFavorite(voice.id); else noFav" src="assets/voice-favourite.svg"
                alt="remove from favorites"
                title="remove from favorites" (click)="unsetFavorite($event, voice)">
           <ng-template #noFav>
-            <img class="fav" src=" /assets/voice-favourite-off.svg" alt="add to favorites" title="add to favorites"
+            <img class="fav" src=" assets/voice-favourite-off.svg" alt="add to favorites" title="add to favorites"
                  (click)="setFavorite($event, voice)">
             </ng-template>
           </td>

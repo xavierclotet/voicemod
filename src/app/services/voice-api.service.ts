@@ -11,6 +11,6 @@ export class VoiceApiService {
   constructor(private http: HttpClient) { }
 
   getVoices(): Observable<Voice[]> {
-    return this.http.get<Voice[]>('/assets/model/voices.json');
+    return this.http.get<Voice[]>('assets/model/voices.json');
   }
 }

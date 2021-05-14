@@ -6,9 +6,6 @@
     </div>
 
     <div class="filter-bar">
-    <!--  <span class="filter-by-label">
-        <img src="/assets/filter.svg">
-      </span> -->
       <div>
         <input formControlName="search" placeholder="Type to search a voice..." maxlength="20">
       </div>
@@ -19,7 +16,7 @@
         </select>
       </div>
       <div (click)="clickedRandomVoice()" class="voice-random">
-        <img [class]="animate" src="/assets/button-random.svg" (click)="clickedRandomVoice()" title="Select a random voice!">
+        <img [class]="animate" src="assets/button-random.svg" (click)="clickedRandomVoice()" title="Select a random voice!">
       </div>
     </div>
 

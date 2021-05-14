@@ -6,7 +6,7 @@
     <ng-container *ngFor="let id of favorites">
       <div [ngClass]="{'selected' : id === selected }" class="item-favorite" (click)="onSelectVoice(id)"
            title="Select this voice">
-        <img src="/assets/{{ getVoiceIcon(id) }}" class="animate__animated animate__fadeInLeft">
+        <img src="assets/{{ getVoiceIcon(id) }}" class="animate__animated animate__fadeInLeft">
         <span class="animate__animated animate__lightSpeedInLeft">{{ getVoiceName(id) }}</span>
       </div>
     </ng-container>
