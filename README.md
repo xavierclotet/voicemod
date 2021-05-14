@@ -41,11 +41,13 @@ What do you have to do:
 
 ## How to start the app
 
-`npm install` 
-`npm run start`
-go to `localhost:4201`
+`npm install`
 
-#Explanation
+`npm run start`
+
+and go to `localhost:4201`
+
+## Explanation
 
 I've buid this simple app with 3 main components: VoiceFiltersComponent, VoiceListComponent and VoiceFavoritesComponent.
 
