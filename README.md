@@ -43,11 +43,11 @@ What do you have to do:
 
 I've buid this simple app with 3 main components: VoiceFiltersComponent, VoiceListComponent and VoiceFavoritesComponent.
 
-Another smart component as an orchestrating (VoicemodComponent) component that pass the info to these dumb components through Inputs and receives events through Outputs. This way only the orchestrator knows how and what to do with the data, state, etc through the facade service (VoiceFacadeService). This way the is highly scalable and extensible.
+Another smart component as an orchestrating (VoicemodComponent) component that pass the info to these dumb components through Inputs and receives events through Outputs. This way only the orchestrator knows how and what to do with the data, state, etc through the facade service (VoiceFacadeService). This way the app is highly scalable and extensible.
 
-I've also create the state of the app (VoiceStateService) that stores the filtered voices, selected voice, favorites, tags, sort mode... which are the source of truth. 
+I've also create the state of the app (VoiceStateService) that stores the filtered voices, selected voice, favorites, tags, sort mode... which are the source of truth (store). 
 
-The app its also responsible showing the favorites below the list and this occupying the whole width.
+The app is responsive showing the favorites below the list and this occupying the whole width, also the filters strech when mobile.
 
 I've used Scss for the styling and added some animations with animate.css lib
 
