@@ -45,13 +45,13 @@ export class VoiceStateService {
       this.data$,
       this.filters$
     ]).pipe(
-      map(([voices, filters]) => voices
+      map(([voices, filters]) =>
+        voices
         .filter(voice => filters.search ? (voice.name.toLowerCase().indexOf(filters.search.toLowerCase()) !== -1) : true)
         .filter(voice => filters.tag ? voice.tags.some(tag => filters.tag === tag) : true)
       ));
   }
 
-  constructor() { }
 
   setData(voices: Voice[]) {
     this._data$.next(voices);

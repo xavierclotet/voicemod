@@ -8,18 +8,11 @@ import { VoiceFacadeService } from 'src/app/services/voice-facade.service';
   styleUrls: ['./voice-favorites.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class VoiceFavoritesComponent implements OnInit {
+export class VoiceFavoritesComponent {
   @Input() favorites: string[] | null = [];
   @Input() selected: string | null = null;
   @Output() selectVoice = new EventEmitter<string>();;
   constructor(private voiceFacadeService: VoiceFacadeService) { }
-
-  ngOnInit(): void {
-  }
-
-  private getVoiceById(id: string): Voice | null {
-    return this.voiceFacadeService.getVoiceById(id);
-  }
 
   getVoiceIcon(id: string): string {
     const voice = this.getVoiceById(id);
@@ -37,7 +30,8 @@ export class VoiceFavoritesComponent implements OnInit {
     }
   }
 
-
-
+  private getVoiceById(id: string): Voice | null {
+    return this.voiceFacadeService.getVoiceById(id);
+  }
 
 }

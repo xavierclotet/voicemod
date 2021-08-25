@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { first, tap } from 'rxjs/operators';
 
 import { Voice, VoiceFilters } from '../models/voice';
 import { VoiceApiService } from './voice-api.service';
@@ -34,7 +34,9 @@ export class VoiceFacadeService {
     return this.voiceStateService.filteredData$;
   }
 
-  constructor(private voiceApiService: VoiceApiService, private voiceStateService: VoiceStateService) { }
+  constructor(
+    private voiceApiService: VoiceApiService,
+    private voiceStateService: VoiceStateService) { }
 
   addFavorite(voice: Voice): void {
     this.voiceStateService.addToFavorites(voice);
@@ -66,5 +68,16 @@ export class VoiceFacadeService {
     this.voiceStateService.sortByName();
   }
 
+  selectRandomVoice() {
+    this.filteredData$.pipe(
+      first(),
+      tap((voices) => {
+        if (voices.length) {
+          const randomVoice = voices[Math.floor(Math.random() * voices.length)];
+          this.selectVoice(randomVoice.id);
+        }
+      })
+    ).subscribe();
+  }
 
 }

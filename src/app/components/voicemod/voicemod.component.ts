@@ -38,16 +38,7 @@ export class VoicemodComponent implements OnInit {
   }
 
   onSelectRandomVoice() {
-    this.voices$.pipe(
-      first(),
-      tap((voices) => {
-        if (voices.length) {
-          const randomVoice = voices[Math.floor(Math.random() * voices.length)];
-          this.voiceFacadeService.selectVoice(randomVoice.id);
-        }
-      })
-    ).subscribe();
-
+    this.voiceFacadeService.selectRandomVoice()
   }
 
   sortByName() {
