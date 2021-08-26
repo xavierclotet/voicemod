@@ -15,7 +15,7 @@ const voiceExample: Voice = {
 }
 
 
-fdescribe('VoiceFavoritesComponent', () => {
+describe('VoiceFavoritesComponent', () => {
   let component: VoiceFavoritesComponent;
   let fixture: ComponentFixture<VoiceFavoritesComponent>;
   let fakeVoicefacadeService: VoiceFacadeService;
