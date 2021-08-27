@@ -1,4 +1,4 @@
-import { Voice } from "../models/voice";
+import { Voice, VoiceFilters } from "../models/voice";
 
 export const voice1: Voice = {
   "id": "alien",
@@ -19,3 +19,10 @@ export const voice2: Voice = {
 };
 
 export const voices: Voice[] = [voice1, voice2];
+export const tags: string[] = ['robotic'];
+
+
+export const filters: VoiceFilters = {
+  search: 'a',
+  tag: ''
+}

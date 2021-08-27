@@ -6,7 +6,7 @@ import { VoiceApiService } from './voice-api.service';
 import { VoiceFacadeService } from './voice-facade.service';
 import { VoiceStateService } from './voice-state.service';
 import { MockProvider } from 'ng-mocks';
-fdescribe('VoiceFacadeService', () => {
+describe('VoiceFacadeService', () => {
   let service: VoiceFacadeService;
   let voiceStateService: VoiceStateService;
   let voiceApiService: VoiceApiService;
