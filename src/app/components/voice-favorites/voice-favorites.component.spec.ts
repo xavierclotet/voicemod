@@ -2,18 +2,9 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Voice } from 'src/app/models/voice';
 import { VoiceFacadeService } from 'src/app/services/voice-facade.service';
+import { voice1 } from 'src/app/spec-helpers/voice.spec-helper';
 
 import { VoiceFavoritesComponent } from './voice-favorites.component';
-
-const voiceExample: Voice = {
-  "id": "adult-to-children",
-  "name": "Adult to children",
-  "icon": "VoicesVoiceIcon03.png",
-  "tags": [
-    "human"
-  ]
-}
-
 
 describe('VoiceFavoritesComponent', () => {
   let component: VoiceFavoritesComponent;
@@ -24,7 +15,7 @@ describe('VoiceFavoritesComponent', () => {
     //create fake service
     fakeVoicefacadeService = jasmine.createSpyObj<VoiceFacadeService>(
       'VoiceFacadeService', {
-      getVoiceById: voiceExample
+      getVoiceById: voice1
     }
     );
 

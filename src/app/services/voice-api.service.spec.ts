@@ -8,7 +8,7 @@ import { Voice } from '../models/voice';
 import { voices } from '../spec-helpers/voice.spec-helper';
 import { VoiceApiService } from './voice-api.service';
 
-fdescribe('VoiceApiService', () => {
+describe('VoiceApiService', () => {
   let service: VoiceApiService;
   let controller: HttpTestingController;
   beforeEach(() => {
