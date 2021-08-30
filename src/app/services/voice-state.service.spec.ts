@@ -3,7 +3,7 @@ import { filters, voice1, voice2, voices } from '../spec-helpers/voice.spec-help
 
 import { VoiceStateService } from './voice-state.service';
 
-fdescribe('VoiceStateService', () => {
+describe('VoiceStateService', () => {
   let service: VoiceStateService;
 
   beforeEach(() => {

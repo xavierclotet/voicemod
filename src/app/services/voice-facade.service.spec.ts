@@ -53,7 +53,7 @@ describe('VoiceFacadeService', () => {
     spyOn(voiceStateService, 'getVoiceById').and.returnValue(voice1);
 
     const voice = service.getVoiceById(voice1.id);
-    expect(voice).toEqual(voices[0]);
+    expect(voice).toEqual(voice1);
   });
 
 

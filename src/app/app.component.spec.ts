@@ -1,11 +1,13 @@
 import { TestBed } from '@angular/core/testing';
+import { MockComponents } from 'ng-mocks';
 import { AppComponent } from './app.component';
+import { VoicemodComponent } from './components/voicemod/voicemod.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent, MockComponents(VoicemodComponent)
       ],
     }).compileComponents();
   });
@@ -16,16 +18,5 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'voicemod'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('voicemod');
-  });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('voicemod app is running!');
-  });
 });

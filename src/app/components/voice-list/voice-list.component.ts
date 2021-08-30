@@ -7,7 +7,7 @@ import { Voice } from 'src/app/models/voice';
   styleUrls: ['./voice-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class VoiceListComponent implements OnInit {
+export class VoiceListComponent {
   @Input() voices: Voice[] | null = [];
   @Input() favorites: string[] | null = [];
   @Input() selected: string | null = null;
@@ -16,10 +16,6 @@ export class VoiceListComponent implements OnInit {
   @Output() setUnfavoriteVoice = new EventEmitter<Voice>();
   @Output() selectedVoice = new EventEmitter<Voice>();
   @Output() sortByName = new EventEmitter<void>();
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
   isFavorite(id: string) {
     const found = this.favorites?.some(fav => fav === id);
