@@ -56,3 +56,8 @@ It lacks unit testing with jest or testing library, but this is out of this prac
 Hope you like it.
 
 Watch it at <https://xavierclotet.github.io/voicemod/tree>!
+
+## changelog
+
+  ● upgraded tslint to eslint `https://github.com/angular-eslint/angular-eslint`
+  ● upgraded to angular 12
