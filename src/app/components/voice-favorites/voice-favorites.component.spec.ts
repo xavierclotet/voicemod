@@ -20,7 +20,6 @@ describe('VoiceFavoritesComponent', () => {
     );
 
     await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
       declarations: [VoiceFavoritesComponent],
       providers: [
         {

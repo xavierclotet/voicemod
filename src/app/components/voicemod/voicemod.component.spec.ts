@@ -11,24 +11,23 @@ import { VoicemodComponent } from './voicemod.component';
 describe('VoicemodComponent', () => {
   let component: VoicemodComponent;
   let fixture: ComponentFixture<VoicemodComponent>;
-  let voiceFacadeService: VoiceFacadeService
+  let voiceFacadeService: VoiceFacadeService;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [VoicemodComponent, MockComponents(VoiceFiltersComponent, VoiceListComponent, VoiceFavoritesComponent)],
       providers: [MockProvider(VoiceFacadeService)]
     })
-    .compileComponents();
-  });
-
-  beforeEach(() => {
+      .compileComponents();
     fixture = TestBed.createComponent(VoicemodComponent);
     component = fixture.componentInstance;
     voiceFacadeService = TestBed.inject(VoiceFacadeService);
-    spyOn(voiceFacadeService, 'loadVoices');
 
   });
 
+
   it('should create', () => {
+    spyOn(voiceFacadeService, 'loadVoices');
     fixture.detectChanges();
     expect(component).toBeTruthy();
     expect(voiceFacadeService.loadVoices).toHaveBeenCalled();

@@ -11,7 +11,7 @@ import { VoiceFacadeService } from 'src/app/services/voice-facade.service';
 export class VoiceFavoritesComponent {
   @Input() favorites: string[] | null = [];
   @Input() selected: string | null = null;
-  @Output() selectVoice = new EventEmitter<string>();;
+  @Output() selectVoice = new EventEmitter<string>();
   constructor(private voiceFacadeService: VoiceFacadeService) { }
 
   getVoiceIcon(id: string): string {

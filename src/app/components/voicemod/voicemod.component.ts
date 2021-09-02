@@ -15,6 +15,7 @@ export class VoicemodComponent implements OnInit {
   tags$: Observable<string[]> = this.voiceFacadeService.tags$;
   favorites$: Observable<string[]> = this.voiceFacadeService.favorites$;
   selected$: Observable<string> = this.voiceFacadeService.selected$;
+
   constructor(private voiceFacadeService: VoiceFacadeService) { }
 
   ngOnInit(): void {
