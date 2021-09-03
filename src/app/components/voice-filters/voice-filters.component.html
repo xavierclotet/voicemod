@@ -15,6 +15,9 @@
           <option *ngFor="let tag of tags" [value]="tag">{{ tag | uppercase }}</option>
         </select>
       </div>
+      <div>
+        <app-voice-filter-favorites></app-voice-filter-favorites>
+      </div>
       <div (click)="clickedRandomVoice()" class="voice-random">
         <img [class]="animate" src="assets/button-random.svg" (click)="clickedRandomVoice()" title="Select a random voice!">
       </div>

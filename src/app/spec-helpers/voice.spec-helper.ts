@@ -24,5 +24,8 @@ export const tags: string[] = ['robotic'];
 
 export const filters: VoiceFilters = {
   search: 'a',
-  tag: ''
+  tag: '',
+  favorites: {
+    favorite: false
+  }
 }

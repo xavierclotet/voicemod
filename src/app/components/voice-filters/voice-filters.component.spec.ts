@@ -37,7 +37,10 @@ describe('VoiceFiltersComponent', () => {
 
     expect(component.changedFilters.emit).toHaveBeenCalledWith({
       search: 'a',
-      tag: ''
+      tag: '',
+      favorites: {
+        favorite: false,
+      }
     });
   });
 

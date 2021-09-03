@@ -1,7 +1,8 @@
-import { Component, OnInit, Output, EventEmitter, Input, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, ChangeDetectionStrategy, ChangeDetectorRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { tap } from 'rxjs/operators';
 import { VoiceFilters } from 'src/app/models/voice';
+import { VoiceFilterFavoritesComponent } from '../voice-filter-favorites/voice-filter-favorites.component';
 
 
 @Component({
@@ -11,23 +12,29 @@ import { VoiceFilters } from 'src/app/models/voice';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class VoiceFiltersComponent implements OnInit {
+  @ViewChild(VoiceFilterFavoritesComponent, { static: true }) voiceFilterFavorites!: VoiceFilterFavoritesComponent;
   @Input() tags: string[] | null = [];
   @Input() selected: string | null = null;
   @Output() changedFilters = new EventEmitter<VoiceFilters>();
   @Output() randomVoice = new EventEmitter<void>();
-  form: FormGroup;
+
+  form!: FormGroup;
   animate = '';
   constructor(
-    formBuilder: FormBuilder,
+    private formBuilder: FormBuilder,
     private cd: ChangeDetectorRef
   ) {
-    this.form = formBuilder.group({
-      search: [''],
-      tag: ['']
-    });
-   }
+
+  }
 
   ngOnInit(): void {
+
+    this.form = this.formBuilder.group({
+      search: [''],
+      tag: [''],
+      favorites: this.voiceFilterFavorites.createFormGroup()
+    });
+
     this.form.valueChanges.pipe(
       tap(() => this.changedFilters.emit(this.form.value as VoiceFilters))
     ).subscribe();

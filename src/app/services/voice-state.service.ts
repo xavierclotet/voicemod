@@ -9,7 +9,10 @@ import { Voice, VoiceFilters } from '../models/voice';
 export class VoiceStateService {
   private _filters$ = new BehaviorSubject<VoiceFilters>({
     search: '',
-    tag: ''
+    tag: '',
+    favorites: {
+      favorite: false
+    }
   });
   get filters$(): Observable<VoiceFilters> {
     return this._filters$.asObservable();
@@ -42,13 +45,15 @@ export class VoiceStateService {
 
   get filteredData$(): Observable<Voice[]> {
     return combineLatest([
+      this.favorites$,
       this.data$,
       this.filters$
     ]).pipe(
-      map(([voices, filters]) =>
+      map(([favorites, voices, filters]) =>
         voices
         .filter(voice => filters.search ? (voice.name.toLowerCase().indexOf(filters.search.toLowerCase()) !== -1) : true)
         .filter(voice => filters.tag ? voice.tags.some(tag => filters.tag === tag) : true)
+          .filter(voice => filters.favorites.favorite ? favorites.find(id => voice.id === id) : true)
       ));
   }
 
