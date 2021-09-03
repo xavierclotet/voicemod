@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { first, tap } from 'rxjs/operators';
+import { first, map, tap } from 'rxjs/operators';
+import { VoiceService, VoiceApiService, VoiceStateService } from '.';
 
-import { Voice, VoiceFilters } from '../models/voice';
-import { VoiceApiService } from './voice-api.service';
-import { VoiceStateService } from './voice-state.service';
+import { Voice, VoiceFilters, VoiceFiltersDTO } from '../models/voice';
 
 @Injectable({
   providedIn: 'root'
@@ -34,9 +33,16 @@ export class VoiceFacadeService {
     return this.voiceStateService.filteredData$;
   }
 
+  get mappedFilters$(): Observable<VoiceFiltersDTO> {
+    return this.filters$.pipe(
+      map(filters => this.voiceService.mapToDTO(filters))
+    );
+  }
+
   constructor(
     private voiceApiService: VoiceApiService,
-    private voiceStateService: VoiceStateService) { }
+    private voiceStateService: VoiceStateService,
+    private voiceService: VoiceService) { }
 
   addFavorite(voice: Voice): void {
     this.voiceStateService.addToFavorites(voice);
@@ -78,6 +84,10 @@ export class VoiceFacadeService {
         }
       })
     ).subscribe();
+  }
+
+  mapToDTO(filters: VoiceFilters): VoiceFiltersDTO {
+    return this.voiceService.mapToDTO(filters);
   }
 
 }

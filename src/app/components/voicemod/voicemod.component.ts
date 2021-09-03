@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { first, tap } from 'rxjs/operators';
-import { Voice, VoiceFilters } from 'src/app/models/voice';
+import { first, map, tap } from 'rxjs/operators';
+import { Voice, VoiceFilters, VoiceFiltersDTO } from 'src/app/models/voice';
 import { VoiceFacadeService } from 'src/app/services/voice-facade.service';
 
 @Component({
@@ -15,6 +15,7 @@ export class VoicemodComponent implements OnInit {
   tags$: Observable<string[]> = this.voiceFacadeService.tags$;
   favorites$: Observable<string[]> = this.voiceFacadeService.favorites$;
   selected$: Observable<string> = this.voiceFacadeService.selected$;
+  mappedFilters$: Observable<VoiceFiltersDTO> = this.voiceFacadeService.mappedFilters$;;
 
   constructor(private voiceFacadeService: VoiceFacadeService) { }
 

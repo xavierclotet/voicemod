@@ -13,3 +13,8 @@ export interface VoiceFilters {
   }
 }
 
+export interface VoiceFiltersDTO {
+  search: string;
+  tag: string;
+  showFavorite: boolean;
+}
