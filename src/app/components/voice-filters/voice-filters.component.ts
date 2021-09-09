@@ -43,7 +43,6 @@ export class VoiceFiltersComponent implements OnInit {
   clickedRandomVoice() {
     this.randomVoice.emit();
     this.setAnimation();
-
   }
 
   setAnimation() {
