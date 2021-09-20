@@ -3,7 +3,7 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 import { VoiceFilterFavoritesComponent } from './voice-filter-favorites.component';
 
-fdescribe('VoiceFilterFavoritesComponent', () => {
+describe('VoiceFilterFavoritesComponent', () => {
   let component: VoiceFilterFavoritesComponent;
   let fixture: ComponentFixture<VoiceFilterFavoritesComponent>;
 

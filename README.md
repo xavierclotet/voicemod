@@ -59,5 +59,7 @@ Watch it at <https://xavierclotet.github.io/voicemod/tree>!
 
 ## changelog
 
+  ● 2.0.0 added cypress `ng add @cypress/schematic`
   ● upgraded tslint to eslint `https://github.com/angular-eslint/angular-eslint`
   ● upgraded to angular 12
+

@@ -6,7 +6,7 @@ import { VoiceFilterFavoritesComponent } from '../voice-filter-favorites/voice-f
 
 import { VoiceFiltersComponent } from './voice-filters.component';
 
-fdescribe('VoiceFiltersComponent', () => {
+describe('VoiceFiltersComponent', () => {
   let component: VoiceFiltersComponent;
   let fixture: ComponentFixture<VoiceFiltersComponent>;
   const voiceFilterFavorites = jasmine.createSpyObj('VoiceFilterFavoritesComponent', ['createFormGroup']);
